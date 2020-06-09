@@ -35,7 +35,7 @@ function transliterate(str, languages; custom_replacements = Dict())
     end
 
     for language in languages
-        # TODO: Here should be some warnings/safety belts added
+        # TODO: Add warning if a specified language is missing
         lang_id = findfirst(x -> x.first == language, replacements)
         d = replacements[lang_id].second
         str = foldl(replace, d, init = str)
